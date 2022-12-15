@@ -1,19 +1,15 @@
 #!/usr/bin/python3
-"""
-Contains the class MyInt
-"""
+"""Module for MyInt"""
 
 
 class MyInt(int):
-    """rebel version of an integer, perfect for opposite day!"""
-    def __new__(cls, *args, **kwargs):
-        """create a new instance of the class"""
-        return super(MyInt, cls).__new__(cls, *args, **kwargs)
+    """This class inherits from the python int object class"""
 
-    def __eq__(self, other):
-        """what was != is now =="""
-        return int(self) != other
+    def __eq__(self, obj):
+        """special equal method"""
+        if self.real == obj:
+            return False
 
-    def __ne__(self, other):
-        """what was == is now !="""
-        return int(self) == other
+    def __ne__(self, obj):
+        """Not equal dunder method"""
+        return not self.__eq__(obj)

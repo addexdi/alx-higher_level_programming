@@ -1,1 +1,1 @@
-# 0x03. Python - Data Structures: Lists, Tuples
+This project is mainly on data structures in python

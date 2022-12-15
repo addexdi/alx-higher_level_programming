@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""defines the function json_string"""
-
-
+"""This module created a json dump file"""
 import json
 
 
 def to_json_string(my_obj):
-    """returns JSON representation of an object"""
-    return json.dumps(my_obj)
+    """This fuction serializes a json file.
+    Args:
+    my_obj: python to be dumped.
+    """
+    return(json.dumps(my_obj))

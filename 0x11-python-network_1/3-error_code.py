@@ -1,15 +1,22 @@
 #!/usr/bin/python3
-""" print error code """
-import urllib.request
-import sys
-
+"""
+    use urllib to request a page
+    traps an exception and print the error code
+"""
 
 if __name__ == "__main__":
-    req = urllib.request.Request(sys.argv[1])
+    import urllib.request
+    import urllib.error
+    import sys
+
+    url = sys.argv[1]
+
     try:
-        urllib.request.urlopen(req)
-        with urllib.request.urlopen(req) as response:
-            bc = response.read().decode('utf-8')
-            print(bc)
-    except urllib.error.HTTPError as e:
-        print("Error code: {}".format(e.code))
+        with urllib.request.urlopen(url) as res:
+            content = res.read()
+            print(content.decode('UTF-8'))
+    except urllib.error.URLError as e:
+        if hasattr(e, 'code'):
+            print('Error code:', e.code)
+        else:
+            pass

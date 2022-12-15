@@ -1,2 +1,1 @@
-**This directory is about conditions**
-***(If, while, for ... loops)***
+This is a project on loops

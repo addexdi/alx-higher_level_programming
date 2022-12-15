@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""defining function append_write"""
+"""This module contains a function that writes to a file"""
 
 
 def append_write(filename="", text=""):
-    """reads filename with utf-8"""
-    with open(filename, "a", encoding='utf-8') as my_file:
-        return my_file.write(text)
+    """This function appends to a file
+    Args:
+    filename: filepath.
+    text: string to be appended.
+    """
+    with open(filename, "a+", encoding="utf-8") as f_obj:
+        return f_obj.write(text)

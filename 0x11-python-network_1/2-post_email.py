@@ -1,15 +1,22 @@
 #!/usr/bin/python3
-""" post email """
+"""
+    use urllib to send post request
+    attaches the mail to the url address
+    displays the content
+"""
 import urllib.request
 import urllib.parse
 import sys
 
-
 if __name__ == "__main__":
-    value = {'email': sys.argv[2]}
+    mail = sys.argv[2]
+    url = sys.argv[1]
+
+    value = {'email': mail}
     data = urllib.parse.urlencode(value)
-    data = data.encode('utf-8')
-    req = urllib.request.Request(sys.argv[1], data)
-    with urllib.request.urlopen(req) as response:
-        ce = response.read().decode(encoding='UTF-8')
-        print(ce)
+    data = data.encode('ascii')
+    res = urllib.request.Request(url, data)
+
+    with urllib.request.urlopen(res) as e_content:
+        content = e_content.read()
+        print(content.decode('utf-8'))

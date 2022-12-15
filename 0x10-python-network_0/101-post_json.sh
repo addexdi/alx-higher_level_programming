@@ -1,3 +1,3 @@
 #!/bin/bash
-# display methods
-curl -s -X POST $1 -d @"$2" --header "Content-Type: application/json"
+# Sends a JSON POST request to a given URL with a given JSON file.
+curl -s -H "Content-Type: application/json" -d "$(cat "$2")" "$1"

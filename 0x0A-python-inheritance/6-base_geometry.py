@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""module contains a class BaseGeometry"""
+"""This is a template for a base geometry class in python"""
 
 
 class BaseGeometry:
-    """A class with public attribute area"""
+    """A class for the BaseGeometry"""
+
     def area(self):
-        """raises an exception when called"""
+        """Empty initializer for class"""
         raise Exception("area() is not implemented")

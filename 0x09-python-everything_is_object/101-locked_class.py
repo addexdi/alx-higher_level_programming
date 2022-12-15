@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""blocked class module"""
+"""Class module LockedClass"""
 
 
 class LockedClass:
-    """object prevents dynamic attribute"""
 
-    __slots__ = ['first_name']
+    """Locked Class sets only attribute firstname"""
+    __slots__ = ["first_name"]

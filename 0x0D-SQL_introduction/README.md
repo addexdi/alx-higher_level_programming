@@ -1,1 +1,1 @@
-# SQL Introduction
+# A quick introduction to MySQL

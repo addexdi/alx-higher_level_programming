@@ -1,3 +1,1 @@
-Introduction to Python
-Hello world 
-
+The projects in this directory are for python programming

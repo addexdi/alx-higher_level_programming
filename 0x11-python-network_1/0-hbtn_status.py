@@ -1,13 +1,20 @@
 #!/usr/bin/python3
-"""Fetches a URL."""
-import urllib.request as request
+"""
+    use the urllib
+    request a content using urlopen
+    inspect content for:
+        type
+        content
+        utf8-content
+"""
 
 
 if __name__ == "__main__":
-    with request.urlopen("https://intranet.hbtn.io/status") as response:
-        if response.readable():
-            data = response.read()
-            print("Body response:")
-            print("\t- type: {}".format(type(data)))
-            print("\t- content: {}".format(data))
-            print("\t- utf8 content: {}".format(data.decode("utf-8")))
+    import urllib.request
+
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res1:
+        content = res1.read()
+    print("Body response:")
+    print("\t- type: {}".format(type(content)))
+    print("\t- content: {}".format(content))
+    print("\t- utf8 content: {}".format(content.decode('utf8')))

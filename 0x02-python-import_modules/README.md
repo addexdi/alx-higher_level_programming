@@ -1,2 +1,1 @@
-''This directory contains work on Import Modules''
-
+This repository is for higher level programming in python

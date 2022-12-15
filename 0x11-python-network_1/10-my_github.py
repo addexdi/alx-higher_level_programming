@@ -1,11 +1,20 @@
 #!/usr/bin/python3
-""" send POST request to github """
+"""
+    use request lib + git API
+    - using basic authentication to get the user id
+"""
+
 import requests
+
 import sys
 
-
 if __name__ == "__main__":
-    response = requests.get("https://api.github.com/user", auth=(
-        sys.argv[1], sys.argv[2]))
-    result = response.json()
-    print(result.get("id"))
+    from requests.auth import HTTPBasicAuth
+
+    username = sys.argv[1]
+    password = sys.argv[2]
+    auth = HTTPBasicAuth(username, password)
+
+    with requests.get("https://api.github.com/user", auth=auth) as res:
+        response = res.json().get("id")
+        print(response)

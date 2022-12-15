@@ -1,14 +1,23 @@
 #!/usr/bin/python3
-"""
-list 10 commits (from the most recent to oldest) of the repository and user
-sent in as arguments
-"""
-if __name__ == '__main__':
-    import requests
-    from sys import argv
-    r = requests.get('https://api.github.com/repos/{}/{}/commits'
-                     .format(argv[2], argv[1]))
-    commits = r.json()
-    for commit in commits[:10]:
-        print(commit.get('sha'), end=': ')
-        print(commit.get('commit').get('author').get('name'))
+'''
+    Using requests lib to
+    -get the last 6 commits of a user
+    - uses git api https://api.github.com/repos/owner/repo/commits
+'''
+import requests
+import sys
+
+if __name__ == "__main__":
+    owner = sys.argv[2]
+    repo = sys.argv[1]
+
+    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
+    with requests.get(url) as res:
+        commits = res.json()
+        try:
+            for i in range(10):
+                print("{}: {}".format(
+                    commits[i].get("sha"),
+                    commits[i].get("commit").get("author").get("name")))
+        except IndexError:
+            pass

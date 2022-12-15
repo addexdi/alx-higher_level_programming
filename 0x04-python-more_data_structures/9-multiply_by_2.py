@@ -1,4 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.9
+
 def multiply_by_2(a_dictionary):
-    a = a_dictionary.keys()
-    return dict(zip(a, [x * 2 for x in a_dictionary.values()]))
+    d = {}
+    for key in a_dictionary:
+        if key not in d:
+            d[key] = (a_dictionary[key]) * 2
+    return d

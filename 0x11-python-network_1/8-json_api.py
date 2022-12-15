@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-"""Sends a search parameter to a URL."""
-import sys
+"""
+    send a mail request using post
+    - return the id and name
+"""
 import requests
+import sys
 
+if __name__ == "__main__":
+    content = "" if len(sys.argv) == 1 else sys.argv[1]
+    payload = {'q': content}
 
-if __name__ == '__main__':
-    url = 'http://0.0.0.0:5000/search_user'
-    query = sys.argv[1] if len(sys.argv) > 1 else ""
-    # if len(query) > 0 and not query[0].isalpha():
-    #     query = ""
-    form_data = [('q', query)]
-    response = requests.post(url, data=form_data)
-    try:
-        json_content = response.json()
-        if json_content:
-            print('[{}] {}'.format(json_content['id'], json_content['name']))
-        else:
-            print('No result')
-    except Exception:
-        print('Not a valid JSON')
+    with requests.post("http://0.0.0.0:5000/search_user", data=payload) as r:
+        try:
+            response = r.json()
+            if response == {}:
+                print("No result")
+            else:
+                print\
+                    ("[{}] {}".format(response.get('id'), response.get('name')))
+        except ValueError:
+            print("Not a valid JSON")

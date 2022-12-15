@@ -1,1 +1,1 @@
-**Python** ***(Everything Is Object)***
+0x09. Python - Everything is object
