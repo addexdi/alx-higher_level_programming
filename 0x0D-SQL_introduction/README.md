@@ -1,1 +1,2 @@
-# A quick introduction to MySQL
+# 0x0D. SQL - Introduction
+

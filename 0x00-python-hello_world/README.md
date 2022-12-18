@@ -1,1 +1,1 @@
-The projects in this directory are for python programming
+This directory contains introductory tasks to python.

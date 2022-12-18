@@ -1,16 +1,12 @@
 #!/usr/bin/python3
 """
-    using request module
-    - to send a post request to a mail address
-    - print the response by the page
+Script that takes in a URL and an email address, sends a POST request to the passed URL
+with the email as a parameter, and finally displays the body of the response
 """
 import requests
-import sys
+from sys import argv
 
-if __name__ == "__main__":
-    url = sys.argv[1]
-    addr = sys.argv[2]
-    payload = {"email": addr}
-
-    with requests.post(url, data=payload) as res:
-        print(res.text)
+if __name__ == '__main__':
+    payload = {'email': argv[2]}
+    r = requests.post(argv[1], data=payload)
+    print(r.text)

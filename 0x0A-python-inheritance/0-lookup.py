@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Look up modules"""
+''' function that returns the list
+'''
 
 
 def lookup(obj):
-    """This function acts a look up table for python objects.
-    Args:
-    obj: python object to be looked up.
-    """
+    ''' function: lookup()
+    Returns a list object
+    '''
     return dir(obj)

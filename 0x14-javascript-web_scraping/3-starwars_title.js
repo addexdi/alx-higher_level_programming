@@ -1,16 +1,12 @@
 #!/usr/bin/node
+// A script that prints the title of a Star Wars movie where the episode num matches a given int
 
 const request = require('request');
-const episodeNum = process.argv[2];
-const API_URL = 'https://swapi-api.hbtn.io/api/films/';
-
-request(API_URL + episodeNum, function (err, response, body) {
-  if (err) {
-    console.log(err);
-  } else if (response.statusCode === 200) {
-    const responseJSON = JSON.parse(body);
-    console.log(responseJSON.title);
+const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+request(url, function (error, response, body) {
+  if (error) {
+    console.error(error);
   } else {
-    console.log('Error code: ' + response.statusCode);
+    console.log(JSON.parse(body).title);
   }
 });

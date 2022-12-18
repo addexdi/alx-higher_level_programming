@@ -1,10 +1,11 @@
 #!/usr/bin/node
-if (process.argv.length === 2 || !parseInt(process.argv[2]) || process.argv[2] === undefined || process.argv[2] === undefined) {
-  console.log('Missing number of occurrences');
-} else {
-  let myCounter = process.argv[2];
-  while (parseInt(myCounter) !== 0) {
+
+let num = process.argv[2];
+
+if (!isNaN(parseInt(process.argv[2]))) {
+  for (let i = 0; i < num; i++) {
     console.log('C is fun');
-    myCounter--;
   }
+} else {
+  console.log('Missing number of occurrences');
 }

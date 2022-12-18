@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""This is a template for a base geometry class in python"""
+"""Defines a base geometry class BaseGeometry."""
 
 
 class BaseGeometry:
-    """A class for the BaseGeometry"""
+    """Reprsent base geometry."""
 
     def area(self):
-        """Empty initializer for class"""
+        """Not yet implemented."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
@@ -18,9 +18,7 @@ class BaseGeometry:
             TypeError: If value is not an integer.
             ValueError: If value is <= 0.
         """
-        if (type(value) != int):
-            raise TypeError("{} must be an integer".format(
-                name))
-        if (value <= 0):
-            raise ValueError("{} must be greater than 0".format(
-                name))
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))

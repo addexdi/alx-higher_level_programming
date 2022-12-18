@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-"""Print the alphabet in lowercase, not followed by a new line."""
-
-for number in range(97, 123):
-    print("{}".format(chr(number)), end="")
+for i in range(ord('a'), ord('z') + 1):
+    print("{:s}".format(chr(i)), end="")

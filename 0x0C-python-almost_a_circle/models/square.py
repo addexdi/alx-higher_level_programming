@@ -1,52 +1,64 @@
 #!/usr/bin/python3
-"""Square boiler plate that inherits from Rectangle()"""
-from rectangle import Rectangle
+"""Define Rectangle Class
+"""
+
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square class; inherits from Rectangle class"""
+    """Module Representation of Square
+"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initializer for square class"""
+        """Initialization a Square
+        """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """getter method"""
+        """module Square size getter
+        """
         return self.width
 
     @size.setter
-    def size(self, size):
-        """setter method"""
-        self.width = size
-        self.height = size
+    def size(self, value):
+        """module Square size setter
+        """
+        self.width = value
+        self.height = value
 
     def __str__(self):
-        """Informal representation of a class"""
-        return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__, self.id, self.x, self.y, self.width)
+        """module string represation of square
+        """
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                                                         self.x,
+                                                         self.y,
+                                                         self.width)
 
     def update(self, *args, **kwargs):
-        """Updates attribute for square class"""
-        attrs = ("id", "size", "x", "y")
-        if args:
-            if len(args) > len(attrs):
-                msg = "update() takes at max {} positional arguments but {} was given"
-                raise TypeError(msg.format(len(attrs), len(args)))
-            for ch in range(min(len(attrs), len(args))):
-                setattr(self, attrs[ch], args[ch])
-
+        """module update square
+        """
+        if len(args):
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.size = arg
+                elif i == 2:
+                    self.x = arg
+                elif i == 3:
+                    self.y = arg
         else:
-            for k in kwargs:
-                if k not in attrs:
-                    msg = "update() takes at max {} positional arguments but {} was given"
-                    raise TypeError(msg.format(len(attrs), len(args)))
-
-                setattr(self, k, kwargs.get(k))
+            for key, value in kwargs.items():
+                if hasattr(self, key) is True:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
+        """retrun dictonary
+        """
         return {
             "id": self.id,
-            "size": self.width,
+            "size": self.size,
             "x": self.x,
             "y": self.y
         }

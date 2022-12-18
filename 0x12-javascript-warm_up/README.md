@@ -1,2 +1,1 @@
-##Vanilla JS with ALX
-#first warm tasks session
+Warming up for JavaScript projects

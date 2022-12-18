@@ -1,1 +1,1 @@
-This project is mainly on data structures in python
+Python - Data Structures: Lists, Tuples

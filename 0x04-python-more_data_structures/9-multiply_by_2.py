@@ -1,8 +1,6 @@
-#!/usr/bin/python3.9
-
-def multiply_by_2(a_dictionary):
-    d = {}
-    for key in a_dictionary:
-        if key not in d:
-            d[key] = (a_dictionary[key]) * 2
-    return d
+#!/usr/bin/python3
+def multiply_by_2(my_dict):
+    tmp_dict = my_dict.copy()
+    for x in tmp_dict.keys():
+        tmp_dict[x] *= 2
+    return (tmp_dict)

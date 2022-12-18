@@ -1,6 +1,3 @@
-#!/usr/bin/python3.9
-
+#!/usr/bin/python3
 def search_replace(my_list, search, replace):
-    result = [replace if elements ==
-              search else elements for elements in my_list]
-    return result
+    return (list(map(lambda x: replace if x is search else x, my_list)))

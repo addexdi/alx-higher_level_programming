@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-"""This is a template for a base geometry class in python"""
+"""
+This is an empty BaseGeometry class.
+"""
 
 
 class BaseGeometry:
-    """Empty class for the BaseGeometry"""
+    ''' Class: BaseGeometry
+    '''
     pass

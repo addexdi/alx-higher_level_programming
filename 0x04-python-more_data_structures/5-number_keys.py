@@ -1,4 +1,3 @@
-#!/usr/bin/python3.9
-
-def number_keys(a_dictionary):
-    return len(list(a_dictionary))
+#!/usr/bin/python3
+def number_keys(my_dict):
+    return (len(my_dict))

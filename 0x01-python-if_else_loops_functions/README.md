@@ -1,1 +1,1 @@
-This is a project on loops
+This directory contains if/else conditional codes

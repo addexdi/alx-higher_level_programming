@@ -1,2 +1,2 @@
 # alx-higher_level_programming
-Python Programming
+Higher level programming language

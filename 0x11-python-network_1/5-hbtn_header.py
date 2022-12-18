@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-
 """
-    using request to get
-    - content type
-    - and OK status code from a URL
+Python script that takes in a URL, sends a request to the URL and displays
+the value of the variable X-Request-Id in the response header
 """
-
 import requests
-import sys
+from sys import argv
 
-if __name__ == "__main__":
-    url = sys.argv[1]
-    with requests.get(url) as res:
-        print(res.headers.get("X-Request-Id"))
+if __name__ == '__main__':
+    r = requests.get(argv[1])
+    print(r.headers.get('X-Request-Id'))

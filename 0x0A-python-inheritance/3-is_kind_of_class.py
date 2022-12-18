@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Module contains function that checks for an instance of an object"""
+''' module: 2-is_same_class
+'''
 
 
 def is_kind_of_class(obj, a_class):
-    """Returns true if an object is an instance of a class
-    Args:
-    obj: python object to be checked.
-    a_class: the class name
-    """
-    return (isinstance(obj, a_class))
+    '''function: is_kind_of_class
+    obj: an object
+    a_class: a class
+    Returns: Bool
+    '''
+    return isinstance(obj, a_class)

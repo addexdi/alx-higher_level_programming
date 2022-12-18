@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""This module deserializes a json dump file"""
+''' function that returns an object (Python data structure) represented by a JSON string
+'''
+
 import json
 
 
 def from_json_string(my_str):
-    """This fuction deserializes a json file.
-    Args:
-    my_obj: python to be dumped.
-    """
-    return(json.loads(my_str))
+    ''' module from_json_string
+     returns Python objects
+    '''
+    return json.loads(my_str)

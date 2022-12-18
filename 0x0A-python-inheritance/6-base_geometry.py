@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""This is a template for a base geometry class in python"""
+"""Defines a base geometry class BaseGeometry."""
 
 
 class BaseGeometry:
-    """A class for the BaseGeometry"""
+    """Represent base geometry."""
 
     def area(self):
-        """Empty initializer for class"""
+        """Not implemented."""
         raise Exception("area() is not implemented")

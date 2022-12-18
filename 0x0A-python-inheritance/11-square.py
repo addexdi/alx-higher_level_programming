@@ -1,18 +1,23 @@
 #!/usr/bin/python3
-"""Module template for Square that inherits from Rectangle"""
+"""
+more class base
+"""
+
 
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(Rectangle):
-    """Class square for making square objects that inherits\
-         attribute functions from Rectangle"""
+"""
+Square class
+"""
 
+
+class Square(Rectangle):
+    """ Square Class """
     def __init__(self, size):
-        """cONSTRUCTOR METHOD FOR SUARE
-        Args:
-        size(int): size of the square.
-        """
-        super().__init__(size, size)
-        self.integer_validator("size", size)
+        """ size init"""
         self.__size = size
+        super().__init__(self.__size, self.__size)
+
+    def __str__(self):
+        return ("[Square] " + str(self.__size) + "/" + str(self.__size))
